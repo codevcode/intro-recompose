@@ -20,7 +20,8 @@
   "homepage": "https://github.com/Isaddo/intro-recompose#readme",
   "dependencies": {
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "recompose": "^0.20.2"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",

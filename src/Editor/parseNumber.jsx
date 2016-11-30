@@ -1,14 +1,9 @@
-import React from 'react'
+import withHandlers from 'recompose/withHandlers'
 
 function parseNumber (value) {
   return +value
 }
 
-export default function handleOnChangeEvent (Component) {
-  return props => (
-    <Component
-      {...props}
-      onChange={value => props.onChange(parseNumber(value))}
-    />
-  )
-}
+export default withHandlers({
+  onChange: ({ onChange }) => value => onChange(parseNumber(value)),
+})
