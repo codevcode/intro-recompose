@@ -1,10 +1,5 @@
-import React from 'react'
+import withHandlers from 'recompose/withHandlers'
 
-export default function handleOnChangeEvent (Component) {
-  return props => (
-    <Component
-      {...props}
-      onChange={event => props.onChange(event.target.value)}
-    />
-  )
-}
+export default withHandlers({
+  onChange: ({ onChange }) => event => onChange(event.target.value),
+})
