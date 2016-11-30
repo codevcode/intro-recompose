@@ -1,14 +1,7 @@
 import React from 'react'
 
+import handleOnChangeEvent from './handleOnChangeEvent'
 
-function handleOnChangeEvent (Component) {
-  return props => (
-    <Component
-      {...props}
-      onChange={event => props.onChange(event.target.value)}
-    />
-  )
-}
 
 const Input = handleOnChangeEvent('input')
 const Textarea = handleOnChangeEvent('textarea')
