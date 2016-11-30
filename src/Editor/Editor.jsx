@@ -29,7 +29,7 @@ export default class Editor extends React.Component {
           type="number"
           value={this.state.age}
           onChange={value => this.setState({ age: value })}
-        /> <br />
+        /> type: {typeof this.state.age} <br />
         note:
         <Textarea
           value={this.state.note}
