@@ -1,5 +1,10 @@
 import React from 'react'
 
 export default function App () {
-  return <h1>Hello, world!</h1>
+  return (
+    <div>
+      <h1>Recompose Introduction</h1>
+      <h3>by Hsieh, Chang-Hsi @codev_</h3>
+    </div>
+  )
 }
