@@ -1,14 +1,7 @@
 import React from 'react'
 
-function Editor () {
-  return (
-    <div>
-      name: <input value="Charles" /> <br />
-      age: <input type="number" /> <br />
-      note: <textarea />
-    </div>
-  )
-}
+import Editor from './Editor'
+
 
 export default function App () {
   return (
