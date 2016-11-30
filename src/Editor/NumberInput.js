@@ -1,4 +1,9 @@
+import compose from 'recompose/compose'
+
 import handleOnChangeEvent from './handleOnChangeEvent'
 import parseNumber from './parseNumber'
 
-export default parseNumber(handleOnChangeEvent('input'))
+export default compose(
+  parseNumber,
+  handleOnChangeEvent,
+)('input')
