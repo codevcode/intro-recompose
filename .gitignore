@@ -1,0 +1,10 @@
+bin
+node_modules
+npm-debug.log
+
+yarn.lock
+
+# Sublime Text file
+*.sublime-project
+*.sublime-workspace
+*.swp
