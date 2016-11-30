@@ -1,23 +1,18 @@
 import React from 'react'
 
-function Input (props) {
-  return (
-    <input
-      type={props.type}
-      value={props.value}
+
+function handleOnChangeEvent (Component) {
+  return props => (
+    <Component
+      {...props}
       onChange={event => props.onChange(event.target.value)}
     />
   )
 }
 
-function Textarea (props) {
-  return (
-    <textarea
-      value={props.value}
-      onChange={event => props.onChange(event.target.value)}
-    />
-  )
-}
+const Input = handleOnChangeEvent('input')
+const Textarea = handleOnChangeEvent('textarea')
+
 
 export default class Editor extends React.Component {
   constructor (props) {
