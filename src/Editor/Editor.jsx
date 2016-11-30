@@ -1,9 +1,11 @@
 import React from 'react'
 
 import handleOnChangeEvent from './handleOnChangeEvent'
+import parseNumber from './parseNumber'
 
 
 const Input = handleOnChangeEvent('input')
+const NumberInput = parseNumber(handleOnChangeEvent('input'))
 const Textarea = handleOnChangeEvent('textarea')
 
 
@@ -25,7 +27,7 @@ export default class Editor extends React.Component {
           onChange={value => this.setState({ name: value })}
         /> <br />
         age:
-        <Input
+        <NumberInput
           type="number"
           value={this.state.age}
           onChange={value => this.setState({ age: value })}
