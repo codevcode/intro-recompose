@@ -4,25 +4,20 @@ import Input from './Input'
 import NumberInput from './NumberInput'
 import Textarea from './Textarea'
 
+function getSubProps (value, updateValue) {
+  return key => ({
+    value: value[key],
+    onChange: subValue => updateValue({ [key]: subValue })
+  })
+}
 
-export default function Editor ({ form: { name, age, note }, updateForm }) {
+export default function Editor ({ form, updateForm }) {
+  const subProps = getSubProps(form, updateForm)
   return (
     <div>
-      name:
-      <Input
-        value={name}
-        onChange={value => updateForm({ name: value })}
-      /> <br />
-      age:
-      <NumberInput
-        value={age}
-        onChange={value => updateForm({ age: value })}
-      /> type: {typeof age} <br />
-      note:
-      <Textarea
-        value={note}
-        onChange={value => updateForm({ note: value })}
-      />
+      name: <Input {...subProps('name')} /> <br />
+      age: <NumberInput {...subProps('age')} /> type: {typeof form.age} <br />
+      note: <Textarea {...subProps('note')} />
     </div>
   )
 }
