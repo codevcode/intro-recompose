@@ -1,12 +1,8 @@
 import React from 'react'
 
-import handleOnChangeEvent from './handleOnChangeEvent'
-import parseNumber from './parseNumber'
-
-
-const Input = handleOnChangeEvent('input')
-const NumberInput = parseNumber(handleOnChangeEvent('input'))
-const Textarea = handleOnChangeEvent('textarea')
+import Input from './Input'
+import NumberInput from './NumberInput'
+import Textarea from './Textarea'
 
 
 export default class Editor extends React.Component {
