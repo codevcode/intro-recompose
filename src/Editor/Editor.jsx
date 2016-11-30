@@ -1,23 +1,13 @@
 import React from 'react'
 
-function Input (props) {
-  return (
-    <input
-      type={props.type}
-      value={props.value}
-      onChange={event => props.onChange(event.target.value)}
-    />
-  )
-}
+import handleOnChangeEvent from './handleOnChangeEvent'
+import parseNumber from './parseNumber'
 
-function Textarea (props) {
-  return (
-    <textarea
-      value={props.value}
-      onChange={event => props.onChange(event.target.value)}
-    />
-  )
-}
+
+const Input = handleOnChangeEvent('input')
+const NumberInput = parseNumber(handleOnChangeEvent('input'))
+const Textarea = handleOnChangeEvent('textarea')
+
 
 export default class Editor extends React.Component {
   constructor (props) {
@@ -37,11 +27,11 @@ export default class Editor extends React.Component {
           onChange={value => this.setState({ name: value })}
         /> <br />
         age:
-        <Input
+        <NumberInput
           type="number"
           value={this.state.age}
           onChange={value => this.setState({ age: value })}
-        /> <br />
+        /> type: {typeof this.state.age} <br />
         note:
         <Textarea
           value={this.state.note}
