@@ -1,5 +1,24 @@
 import React from 'react'
 
+function Input (props) {
+  return (
+    <input
+      type={props.type}
+      value={props.value}
+      onChange={event => props.onChange(event.target.value)}
+    />
+  )
+}
+
+function Textarea (props) {
+  return (
+    <textarea
+      value={props.value}
+      onChange={event => props.onChange(event.target.value)}
+    />
+  )
+}
+
 export default class Editor extends React.Component {
   constructor (props) {
     super(props)
@@ -13,20 +32,20 @@ export default class Editor extends React.Component {
     return (
       <div>
         name:
-        <input
+        <Input
           value={this.state.name}
-          onChange={event => this.setState({ name: event.target.value })}
+          onChange={value => this.setState({ name: value })}
         /> <br />
         age:
-        <input
+        <Input
           type="number"
           value={this.state.age}
-          onChange={event => this.setState({ age: event.target.value })}
+          onChange={value => this.setState({ age: value })}
         /> <br />
         note:
-        <textarea
+        <Textarea
           value={this.state.note}
-          onChange={event => this.setState({ note: event.target.value })}
+          onChange={value => this.setState({ note: value })}
         />
       </div>
     )
