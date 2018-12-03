@@ -1,5 +1,7 @@
 # intro-recompose
 
+[[video]](https://youtu.be/T2LGHIE9fyo?t=405)
+
 藉由開發簡單表單的過程，介紹 Higher-order Component 的概念與示範 Recompose 的基本使用。
 
 Introduce the concept of the Higher-order Component and the basic usage of Recompose
